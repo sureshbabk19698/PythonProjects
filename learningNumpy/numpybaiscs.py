@@ -7,6 +7,12 @@ print(array)
 npArray = np.array(array)
 print(npArray)
 
+list = [1, 'a', ['b', 'c']]
+print("Different types of object can coexist  in normal array: ", list)
+# listNpArray = np.array(list) # setting an array element with a sequence. The requested array has an inhomogeneous shape
+listNpArray = np.array(list, dtype=object)
+print("Different types of object can coexist  in numpy  array: ", listNpArray)
+
 # key differences
 print("Logical Operations in entire array without looping")
 print(npArray > 5)  # [ True  True  True  True]
