@@ -11,6 +11,11 @@ print(npArray)
 print("Logical Operations in entire array without looping")
 print(npArray > 5)  # [ True  True  True  True]
 # print(array > 5) # TypeError: '>' not supported between instances of 'list' and 'int'
+print("Mathematical Operations in np array")
+print("Sum", npArray.sum())
+twoDnpArray = np.arange(25, 50).reshape(5, 5)
+print("Sum of 2D array columns: ", twoDnpArray.sum(axis=1))
+print("Slicing from 2D array columns: ", twoDnpArray[3:, 3:])
 
 print("Slicing in normal array vs npArray ")
 a, b = array[0:2]
