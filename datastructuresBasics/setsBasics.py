@@ -16,9 +16,10 @@ print(set3)
 
 x = set([1, 2, 3])
 y = x
-print("After assigning object reference: ", x is y) # True
+print("After assigning object reference: ", x is y)  # True
 y = x.copy()
-print("After copying object: ", x is y) # False
+print("After copying object: ", x is y)  # False
 
 x.remove(3)
 print("After removing 3, set: +", x)
+# print("After removing 3, set: +", x[2]) # TypeError: 'set' object is not subscriptable
