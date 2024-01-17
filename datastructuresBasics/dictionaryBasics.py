@@ -30,5 +30,18 @@ emptyMap = {}
 for x in map:  # for x in map.keys(): both are same
     print("Iterating key ", x, "and value: ", map[x])
 
-for x in map.items(): # equivalent to Map.Entry<> entry: map.entrySet()
+for x in map.items():  # equivalent to Map.Entry<> entry: map.entrySet()
     print("Iterating item : ", x)
+
+stateMap = {"India": "Delhi", "Belgium": "Brussels", "France": "Pair"}
+nestedMap = {
+    "Country": stateMap,
+}
+
+print("Accessing nested map ", nestedMap["Country"]["India"])
+
+x = ('key1', 'key2', 'key3')
+y = 0
+
+createDictWithEmptyOrDefaultValue = dict.fromkeys(x, y)
+print("Printing fromkeys map ", createDictWithEmptyOrDefaultValue)
