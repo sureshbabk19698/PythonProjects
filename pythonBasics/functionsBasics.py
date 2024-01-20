@@ -60,3 +60,28 @@ def myfunc(n):
 
 mydoubler = myfunc(2)
 print("executing lambda function", mydoubler(11))
+
+a = 200
+print("before changing global variable a", a)
+
+
+def func_inside_func():
+    print("func_inside_func", a)
+
+    def inner_fun():
+        print("inner function")
+
+    inner_fun()
+
+
+func_inside_func()
+
+
+def global_var_func():
+    global a
+    a = 300
+    print("Inside Global var func", a)
+
+
+global_var_func()
+print("accessing global variable a", a)
