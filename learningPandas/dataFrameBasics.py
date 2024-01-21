@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 
 array = np.arange(1, 21).reshape(5, 4)
-
 #     W   X   Y   Z
 # A   1   2   3   4
 # B   5   6   7   8
@@ -63,3 +62,14 @@ print(df)
 df['States'] = 'CA NY WY OR'.split()
 print(type(df['States'].values))  # <class 'numpy.ndarray'>
 print(df.set_index("States"))
+
+df1 = pd.DataFrame({'A': [1, 2, np.nan],
+                    'B': [5, np.nan, np.nan],
+                    'C': [1, 2, 3]})
+print(df1)
+print(df1.dropna(axis=1))
+print(df1.dropna())
+print(df1.dropna(thresh=2))
+print(df1.fillna(value='Dummy'))
+
+print(df1['A'].fillna(value=df1['A'].mean()))
