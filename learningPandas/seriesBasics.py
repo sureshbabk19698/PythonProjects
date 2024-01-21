@@ -16,6 +16,8 @@ print("Accessing via index", ser1['a'])
 ser2['d'] = 'd'
 print("Merging Series", ser1 + ser2)
 
-ser2['a'] = 'a'
+ser2['a'] = [ 14, 134]
 # Merging column dtype should be same
 # print("Merging Series", ser1 + ser2)  # TypeError: unsupported operand type(s) for +: 'float' and 'str'
+for x in ser2.items():
+    print(x)
