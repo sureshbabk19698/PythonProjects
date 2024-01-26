@@ -26,5 +26,3 @@ print(response.json())
 for x in response.json():
     del x['lastEditedDate']
     print(NotificationModel(**x))
-# x = json.loads(response.json(), object_hook=lambda d: SimpleNamespace(**d))
-# print(x)
