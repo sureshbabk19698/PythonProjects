@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 data = {'Company': ['GOOG', 'GOOG', 'MSFT', 'MSFT', 'FB', 'FB'],
@@ -29,3 +30,43 @@ print(desc.loc[['FB', 'GOOG']])
 print(df['Company'])
 print("Unique Elements in column: ", df['Company'].unique())
 print("Unique Elements count in column: ", df['Company'].nunique())
+
+print("Elements and their no of occurrences in column: ", df['Company'].value_counts())
+
+
+def times2(x):
+    return x * 2
+
+
+doubleDf = df['Sales'].apply(times2)
+print(" Double df; ", doubleDf)
+print(" Length df; ", df['Company'].apply(len))
+
+print("Sorted Companies by name:")
+df.sort_values(by='Company', inplace=True)
+print(df)
+df.sort_values(by='Sales', inplace=True)
+print(df)
+
+df = pd.DataFrame({'col1': [1, 2, 3, np.nan],
+                   'col2': [np.nan, 555, 666, 444]
+                   })
+print("Df with NaN")
+#    col1   col2 col3
+# 0   1.0    NaN  abc
+# 1   2.0  555.0  def
+# 2   3.0  666.0  ghi
+# 3   NaN  444.0  xyz
+print(df)  # index 0 and 3 are removed
+print(df.dropna())
+
+print("Iterating columns in df")
+columns = list(df)
+for col in columns:
+    print(df[col].fillna(value=df[col].mean(), inplace=True))
+
+print(df)
+print("Iterating rows in df")
+for i, j in df.iterrows():
+    print(i)
+    for x in j: print(x)
